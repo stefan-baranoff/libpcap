@@ -1012,6 +1012,24 @@ filters packets with an outer label of 100000 and an inner label of
 .in -.5i
 filters packets to or from 192.9.200.1 with an inner label of 1024 and
 any outer label.
+.IP "\fBvntag\fR"
+True if the packet is a VNTag packet EtherType 0x8926. Each use of that keyword
+increments the filter link header and payload offsets by 6.
+.IP
+For example:
+.in +.5i
+.nf
+\fBvntag\fR
+.fi
+.in -.5i
+filters on VNTag as the next ethertype and skips the VNTag header
+.in +.5i
+.nf
+\fBvntag\fR and \fBvlan\fR and \fBip src host\fR 192.0.2.0
+.fi
+.in -.5i
+filters on VNTag followed by any VLAN followed by an IPv4 packet from 192.0.2.0
+skipping over the VNTag header, then VLAN header, to allow finding the IPv4
 .IP \fBpppoed\fP
 True if the packet is a PPP-over-Ethernet Discovery packet (Ethernet
 type 0x8863).
