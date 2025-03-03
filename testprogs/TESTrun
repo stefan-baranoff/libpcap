@@ -10096,19 +10096,19 @@ my %apply_blocks = (
 		results => [46],
 	},
 	vntag => {
-		savefile => 'vntag.pcap',
+		savefile => 'vntag-novntag-mixed.pcap',
 		expr => 'vntag',
-		results => [65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535],
+		results => [262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	},
 	vntag_vlan_ip => {
-		savefile => 'vntag.pcap',
+		savefile => 'vntag-novntag-mixed.pcap',
 		expr => 'vntag and vlan 100 and ip',
-		results => [65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535],
+		results => [262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 262144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	},
 	vntag_vlan_dest_ip => {
-		savefile => 'vntag.pcap',
+		savefile => 'vntag-novntag-mixed.pcap',
 		expr => 'vntag and vlan 100 and ip dst 192.168.20.102',
-		results => [0, 65535, 0, 0, 65535, 65535, 0, 0, 65535, 65535, 0],
+		results => [0, 262144, 0, 0, 262144, 262144, 0, 0, 262144, 262144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	},
 );
 
